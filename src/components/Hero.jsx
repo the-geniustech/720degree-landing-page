@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { FadeIn } from "./FadeIn";
 import { Link } from "react-scroll";
 
-const Hero = ({ onSetModalOpen }) => {
+const Hero = () => {
   return (
     <>
       <FadeIn id="home" className="bg-primary mt-20">
@@ -26,7 +25,6 @@ const Hero = ({ onSetModalOpen }) => {
                   offset={-70}
                   duration={500}
                   role="button"
-                  onClick={() => onSetModalOpen((modalOpen) => !modalOpen)}
                 >
                   Get started
                 </Link>

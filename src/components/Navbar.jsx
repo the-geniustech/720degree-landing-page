@@ -6,7 +6,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <FadeIn className="top-0 left-0 z-50 fixed flex items-center bg-white shadow-lg backdrop-blur-2xl w-full sh">
+    <FadeIn className="top-0 left-0 z-50 fixed flex items-center bg-white shadow-lg backdrop-blur-2xl w-full h-20 sh">
       <div className="mx-auto container">
         <div className="relative flex justify-between items-center -mx-4">
           <div className="px-4 w-60 max-w-full">
@@ -41,7 +41,6 @@ const Navbar = () => {
             </div>
             <div className="sm:flex justify-end hidden pr-16 lg:pr-0">
               <Link
-                activeClass="text-primary-light-3"
                 to="contact"
                 spy={true}
                 smooth={true}
@@ -63,7 +62,7 @@ const ListItem = ({ children, NavLink }) => {
   return (
     <li>
       <Link
-        activeClass="text-primary"
+        activeClass="text-primary underline-offset-8 underline-primary underline"
         to={NavLink}
         spy={true}
         smooth={true}
