@@ -45,7 +45,7 @@ const Feedback = () => {
           <SingleTestimonial
             image="/jemima.jpg"
             name="Jemima Afuape"
-            position="Founder @ Poettry."
+            position="Frontend Developer."
             details="Enrolling in 720Degree Hub Bootcamp was the best decision I've ever made. The comprehensive curriculum, state-of-the-art facilities, and personalized guidance prepared me thoroughly for the tech industry. My career prospects have soared, and I couldn't be happier with the outcome."
           />
         </div>
