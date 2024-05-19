@@ -1,65 +1,80 @@
-import React, { useState } from 'react';
-import {logo,lock, hamburgerMenu, close} from '../assets'
+import React, { useState } from "react";
+import { Link } from "react-scroll";
+import { FadeIn } from "./FadeIn";
 
 const Navbar = () => {
-
-    const [toggle,setToggle]=useState(false)
-    const handleClick = ()=> setToggle(!toggle)
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className='w-full h-[80px] bg-white border-b'>
-        <div className='md:max-w-[1480px] max-w-[600px] m-auto w-full h-full flex justify-between items-center md:px-0 px-4'>
-            
-            <img src={logo} className="h-[25px]" />
-            
-            <div className='hidden md:flex items-center '>
-                <ul className='flex gap-4'>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Support</li>
-                    <li>Platform</li>
-                    <li>Pricing</li>
+    <FadeIn className="top-0 left-0 z-50 fixed flex items-center bg-white shadow-lg backdrop-blur-2xl w-full sh">
+      <div className="mx-auto container">
+        <div className="relative flex justify-between items-center -mx-4">
+          <div className="px-4 w-60 max-w-full">
+            <a href="/#" className="block py-5 w-full">
+              <img src="/720logo.png" alt="logo" className="w-full" />
+            </a>
+          </div>
+          <div className="flex justify-between items-center px-4 w-full">
+            <div>
+              <button
+                onClick={() => setOpen(!open)}
+                className={` ${
+                  open && "navbarTogglerActive"
+                } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
+              >
+                <span className="block relative bg-primary-dark dark:bg-white my-[6px] w-[30px] h-[2px]"></span>
+                <span className="block relative bg-primary-dark dark:bg-white my-[6px] w-[30px] h-[2px]"></span>
+                <span className="block relative bg-primary-dark dark:bg-white my-[6px] w-[30px] h-[2px]"></span>
+              </button>
+              <nav
+                className={`absolute right-4 top-full z-50 w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:shadow-none lg:dark:bg-transparent ${
+                  !open && "hidden"
+                } `}
+              >
+                <ul className="block lg:flex">
+                  <ListItem NavLink="home">Home</ListItem>
+                  <ListItem NavLink="career">Career</ListItem>
+                  <ListItem NavLink="schools">Schools</ListItem>
+                  <ListItem NavLink="about">Why 720degree Hub?</ListItem>
                 </ul>
+              </nav>
             </div>
-
-
-            <div className='hidden md:flex'>
-                <button className='flex justify-between items-center  bg-transparent  px-6 gap-2'>
-                    <img src={lock} />
-                    Login
-                </button>
-                <button className='px-8 py-3 rounded-md bg-[#20B486] text-white font-bold'>Sign Up For Free</button>
+            <div className="sm:flex justify-end hidden pr-16 lg:pr-0">
+              <Link
+                activeClass="text-primary-light-3"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="bg-primary hover:bg-opacity-90 px-7 py-3 rounded-lg font-medium text-base text-white cursor-pointer"
+              >
+                Apply Now
+              </Link>
             </div>
-
-            <div className='md:hidden'  onClick={handleClick}>
-                    <img src={toggle?close:hamburgerMenu} />
-            </div>
-
-
-
-
+          </div>
         </div>
+      </div>
+    </FadeIn>
+  );
+};
 
-        <div className={toggle?'absolute z-10 p-4  bg-white w-full px-8 md:hidden border-b':'hidden'}>
-            <ul>
-                    <li className='p-4 hover:bg-gray-100'>Home</li>
-                    <li className='p-4 hover:bg-gray-100'>About</li>
-                    <li className='p-4 hover:bg-gray-100'>Support</li>
-                    <li className='p-4 hover:bg-gray-100'>Platform</li>
-                    <li className='p-4 hover:bg-gray-100'>Pricing</li>
-                    <div className='flex flex-col my-4 gap-4'>
-                        <button className='border border-[20B486] flex justify-center items-center  bg-transparent  px-6 gap-2 py-4'>
-                         <img src={lock} />
-                         Login
-                        </button>
-                        <button className='px-8 py-5 rounded-md bg-[#20B486] text-white font-bold'>Sign Up For Free</button>
-                    </div>
-            </ul>
-        </div>
-        
-        
-    </div>
-  )
-}
+const ListItem = ({ children, NavLink }) => {
+  return (
+    <li>
+      <Link
+        activeClass="text-primary"
+        to={NavLink}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        className="lg:inline-flex flex lg:ml-12 py-2 font-medium text-base text-primary-dark hover:text-primary underline-offset-8 underline-primary hover:underline cursor-pointer"
+      >
+        {children}
+      </Link>
+    </li>
+  );
+};
 
-export default Navbar
+export default Navbar;
