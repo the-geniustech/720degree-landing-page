@@ -16,7 +16,7 @@ const CTA = () => {
               />
             </div>
           </div>
-          <div className="bg-primary p-16 lg:pl-12 rounded-lg w-full lg:w-7/12 h-full text-white">
+          <div className="bg-primary px-6 py-16 lg:pl-12 rounded-lg w-full lg:w-7/12 h-full text-white">
             <div className="lg:pl-12">
               <h2 className="mb-6 font-bold text-3xl">
                 Want to crack the code to a 7-figure income? You're not alone!
