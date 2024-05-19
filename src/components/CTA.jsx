@@ -4,8 +4,8 @@ import { Link } from "react-scroll";
 
 const CTA = () => {
   return (
-    <FadeIn id="about" className="mx-auto my-24 md:px-6 container">
-      <div className="mb-32">
+    <FadeIn id="about" className="mx-auto mt-24 mb-36 md:px-6">
+      <div className="container">
         <div className="flex flex-wrap items-center">
           <div className="mb-12 lg:mb-0 grow-0 w-full lg:w-5/12 basis-auto shrink-0">
             <div className="flex lg:py-12">
@@ -16,7 +16,7 @@ const CTA = () => {
               />
             </div>
           </div>
-          <div className="bg-primary p-6 lg:pl-12 rounded-lg w-full lg:w-7/12 h-full text-white">
+          <div className="bg-primary p-16 lg:pl-12 rounded-lg w-full lg:w-7/12 h-full text-white">
             <div className="lg:pl-12">
               <h2 className="mb-6 font-bold text-3xl">
                 Want to crack the code to a 7-figure income? You're not alone!
