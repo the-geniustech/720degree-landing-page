@@ -7,7 +7,7 @@ const Hero = () => {
     <>
       <FadeIn id="home" className="bg-primary mt-20">
         <Navbar />
-        <div className="relative bg-[50%] bg-[url('/720entrance.jpg')] bg-cover bg-no-repeat h-[500px] md:h-[660px] overflow-hidden">
+        <div className="relative bg-[50%] bg-[url('/720entrance.jpg')] bg-cover bg-no-repeat h-[600px] md:h-[660px] overflow-hidden">
           <div className="top-0 right-0 bottom-0 left-0 absolute bg-[hsla(0,0%,0%,0.75)] bg-fixed w-full h-full overflow-hidden">
             <div className="flex justify-center items-center h-full">
               <div className="px-6 md:px-12 text-center text-primary-light-2">
